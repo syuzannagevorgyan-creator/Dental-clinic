@@ -1,25 +1,25 @@
-
 <!DOCTYPE html>
-<html lang="hy">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>29 Dent | Dental Clinic in Kapan, Armenia</title>
-  <meta name="description" content="29 Dent dental clinic in Kapan, Syunik, Armenia. Contact Hovhannes Hayrapetyan and Vilen Tsatryan. Call +37499292929 to arrange an appointment.">
-  <meta name="theme-color" content="#123e3a">
+  <meta name="theme-color" content="#101c2a">
+  <meta name="description" content="29 Dent dental clinic in Kapan, Syunik, Armenia. Meet our dentists and arrange your appointment by phone or WhatsApp.">
+  <title>29 Dent — Dental Clinic · Kapan</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+
     :root {
-      --green: #123e3a;
-      --green-light: #235b50;
-      --mint: #e1eddf;
-      --cream: #faf9f5;
+      --navy: #101c2a;
+      --navy-light: #192a3c;
+      --gold: #c5ab7a;
+      --gold-light: #e7d9bc;
+      --ivory: #f7f4ee;
       --white: #ffffff;
-      --text: #173e37;
-      --muted: #526960;
-      --border: #d5dfd4;
-      --gold: #bca577;
-      --radius: 18px;
+      --ink: #182535;
+      --muted: #68707a;
+      --line: #ddd8cd;
     }
 
     * {
@@ -28,26 +28,33 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 30px;
     }
 
     body {
       margin: 0;
-      background: var(--cream);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
+      color: var(--ink);
+      background: var(--ivory);
+      font-family: "Manrope", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--navy);
     }
 
     a {
       color: inherit;
-      text-underline-offset: 5px;
+      text-decoration: none;
     }
 
-    a:focus-visible,
-    label:focus-visible,
-    summary:focus-visible {
-      outline: 3px solid var(--gold);
-      outline-offset: 5px;
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
     }
 
     h1, h2, h3, p {
@@ -55,432 +62,663 @@
     }
 
     h1, h2, h3 {
-      line-height: 1.2;
+      font-weight: 400;
+    }
+
+    h1, h2, .serif {
+      font-family: "Cormorant Garamond", Georgia, serif;
     }
 
     h1 {
-      font-size: clamp(38px, 5.5vw, 74px);
-      letter-spacing: -2px;
-      font-weight: 500;
-      margin-bottom: 26px;
+      font-size: clamp(56px, 7.5vw, 110px);
+      line-height: .98;
+      letter-spacing: -3px;
+      margin-bottom: 28px;
     }
 
     h2 {
-      font-size: clamp(29px, 3.5vw, 46px);
-      letter-spacing: -1px;
-      font-weight: 500;
+      font-size: clamp(39px, 4.7vw, 66px);
+      line-height: 1.07;
+      letter-spacing: -1.5px;
       margin-bottom: 24px;
     }
 
     h3 {
       font-size: 21px;
-      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    p {
+      margin-bottom: 22px;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 6px;
     }
 
     .container {
-      width: min(1160px, 90%);
+      width: min(1240px, 89%);
       margin-inline: auto;
     }
 
-    /* Native radio buttons select the language without JavaScript. */
-    .language-radio {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      clip-path: inset(50%);
-      overflow: hidden;
-    }
-
-    .language-bar {
-      background: var(--green);
-      color: white;
-    }
-
-    .language-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      min-height: 48px;
-    }
-
-    .top-phone {
-      font-size: 13px;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .language-options {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .language-options label {
-      cursor: pointer;
-      border: 1px solid transparent;
-      border-radius: 5px;
-      padding: 4px 10px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    #lang-hy:checked ~ .language-bar label[for="lang-hy"],
-    #lang-en:checked ~ .language-bar label[for="lang-en"],
-    #lang-ru:checked ~ .language-bar label[for="lang-ru"] {
-      border-color: #c9decb;
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    #lang-hy:focus-visible ~ .language-bar label[for="lang-hy"],
-    #lang-en:focus-visible ~ .language-bar label[for="lang-en"],
-    #lang-ru:focus-visible ~ .language-bar label[for="lang-ru"] {
-      outline: 3px solid var(--gold);
-      outline-offset: 3px;
-    }
-
-    .page {
-      display: none;
-    }
-
-    #lang-hy:checked ~ .page-hy,
-    #lang-en:checked ~ .page-en,
-    #lang-ru:checked ~ .page-ru {
-      display: block;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: 15px;
-      top: -100px;
-      z-index: 10;
-      padding: 12px 18px;
-      background: white;
-    }
-
-    .skip-link:focus {
-      top: 55px;
-    }
-
-    .header {
-      border-bottom: 1px solid var(--border);
-    }
-
-    .header-inner {
-      min-height: 98px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .logo {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 5px;
-      text-decoration: none;
-      white-space: nowrap;
-      font-size: 39px;
-      letter-spacing: -2px;
-      font-weight: 800;
-    }
-
-    .logo span {
-      font-size: 27px;
-      font-weight: 400;
-      letter-spacing: -1px;
-    }
-
-    .logo b {
-      font-size: 23px;
-      margin-left: 5px;
-      color: var(--green-light);
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 25px;
-    }
-
-    .nav a {
-      font-size: 14px;
-      text-decoration: none;
-    }
-
-    .nav a:hover,
-    .text-link:hover {
-      color: var(--green-light);
-      text-decoration: underline;
-    }
-
-    .header-call {
-      font-size: 14px;
-      font-weight: bold;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .hero {
-      padding: 70px 0;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 65px;
-      align-items: center;
+    .section {
+      padding: 105px 0;
     }
 
     .eyebrow {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
+      display: block;
+      color: #927647;
+      font-size: 10px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 23px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .muted {
+      color: var(--muted);
     }
 
     .lead {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 570px;
+      max-width: 520px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 17px 25px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background .25s ease, transform .25s ease;
+    }
+
+    .button:hover {
+      background: var(--gold-light);
+      transform: translateY(-3px);
+    }
+
+    .button-outline {
+      color: white;
+      background: transparent;
+      border-color: #66707a;
+    }
+
+    .button-outline:hover {
+      color: var(--navy);
+      background: var(--gold-light);
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 23px;
+      gap: 16px;
       margin-top: 30px;
     }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      padding: 16px 23px;
-      background: var(--green);
-      color: white;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 180ms ease, transform 180ms ease;
-    }
-
-    .button:hover {
-      background: var(--green-light);
-      transform: translateY(-2px);
-    }
-
-    .text-link {
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .hours-small {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 25px;
-      margin-bottom: 0;
-    }
-
-    .hero-art {
-      position: relative;
-      min-height: 470px;
+    /* CSS-only language switching */
+    .language-input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
       overflow: hidden;
-      border-radius: 48% 48% 12px 12px;
-      background:
-        radial-gradient(circle at 20% 20%, #f0f6e8, transparent 60%),
-        var(--mint);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      clip-path: inset(50%);
     }
 
-    .hero-art::before,
-    .hero-art::after {
-      content: "";
-      position: absolute;
-      width: 330px;
-      height: 330px;
-      border: 1px solid #afc5ad;
-      border-radius: 50%;
+    .t {
+      display: none;
     }
 
-    .hero-art::after {
-      width: 390px;
-      height: 390px;
-      border-color: #c6d7bf;
+    #en:checked ~ .site .en,
+    #hy:checked ~ .site .hy,
+    #ru:checked ~ .site .ru {
+      display: inline;
     }
 
-    .monogram {
-      position: relative;
-      z-index: 1;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 150px;
-      line-height: 1;
-      letter-spacing: -12px;
+    #hy:checked ~ .site h1,
+    #hy:checked ~ .site h2 {
+      font-family: Arial, sans-serif;
+      letter-spacing: -1px;
     }
 
-    .monogram-word {
-      position: relative;
-      z-index: 1;
-      margin-top: 14px;
-      padding-left: 11px;
-      letter-spacing: 12px;
-      font-size: 17px;
+    #hy:checked ~ .site h1 {
+      font-size: clamp(39px, 5.3vw, 76px);
+      line-height: 1.15;
     }
 
-    .sparkle {
-      position: absolute;
-      top: 43px;
-      right: 37px;
-      font-size: 43px;
+    #hy:checked ~ .site h2 {
+      font-size: clamp(29px, 3.4vw, 46px);
+      line-height: 1.2;
     }
 
-    .photo-note {
-      position: absolute;
-      bottom: 22px;
-      left: 24px;
-      right: 24px;
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .ribbon {
-      background: var(--green);
-      color: white;
-      padding: 21px 0;
-    }
-
-    .ribbon-inner {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 15px;
-      font-size: 12px;
+    .topbar {
+      background: #0b141f;
+      color: #c4cbd0;
+      font-size: 10px;
       letter-spacing: 1px;
     }
 
-    .ribbon a {
-      text-decoration: none;
+    .topbar-inner {
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
     }
 
-    .section {
-      padding: 85px 0;
-      scroll-margin-top: 30px;
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .languages {
+      display: flex;
+      gap: 5px;
+    }
+
+    .languages label {
+      padding: 3px 7px;
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+    }
+
+    #en:checked ~ .site label[for="en"],
+    #hy:checked ~ .site label[for="hy"],
+    #ru:checked ~ .site label[for="ru"] {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+    }
+
+    #en:focus-visible ~ .site label[for="en"],
+    #hy:focus-visible ~ .site label[for="hy"],
+    #ru:focus-visible ~ .site label[for="ru"] {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      border-bottom: 1px solid #ffffff15;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      min-height: 100px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      flex-shrink: 0;
+    }
+
+    .logo-mark {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 58px;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 33px;
+      line-height: 1;
+    }
+
+    .logo-name {
+      display: block;
+      color: inherit;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 5px;
+    }
+
+    .logo-sub {
+      display: block;
+      color: var(--gold);
+      font-size: 8px;
+      letter-spacing: 2.2px;
+      margin-top: 3px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 27px;
+    }
+
+    nav a {
+      color: #d2d7dc;
+      font-size: 11px;
+      transition: color .2s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .header-book {
+      padding: 11px 17px;
+      font-size: 10px;
+      gap: 15px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+      color: white;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 700px;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      align-self: center;
+      padding: 75px 55px 85px 0;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold);
+    }
+
+    .hero h1 em {
+      font-weight: 400;
+      color: var(--gold-light);
+    }
+
+    .hero .lead {
+      color: #b9c1c8;
+      font-size: 14px;
+    }
+
+    .hero-image {
+      position: relative;
+      margin-right: calc((100vw - 100%) / -2);
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-position: 48% center;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        var(--navy) 0%,
+        rgba(16,28,42,.18) 35%,
+        rgba(16,28,42,.08) 100%
+      );
+    }
+
+    .image-caption {
+      position: absolute;
+      z-index: 2;
+      bottom: 22px;
+      right: 25px;
+      left: 35px;
+      color: #ffffffd0;
+      font-size: 9px;
+      letter-spacing: .5px;
+      text-align: right;
+    }
+
+    .hero-bottom {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 42px;
+      color: #bac4cc;
+      font-size: 10px;
+      letter-spacing: .5px;
+    }
+
+    .hero-bottom::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .info-strip {
+      background: white;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .info-item {
+      padding: 28px 30px;
+      border-right: 1px solid var(--line);
+    }
+
+    .info-item:first-child {
+      padding-left: 0;
+    }
+
+    .info-item:last-child {
+      border-right: 0;
+    }
+
+    .info-item small {
+      display: block;
+      color: #927647;
+      font-size: 9px;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .info-item strong {
+      font-size: 13px;
+      font-weight: 500;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 60px;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 90px;
     }
 
-    .body-copy {
+    .about-images {
+      position: relative;
+      padding: 0 35px 35px 0;
+    }
+
+    .about-image {
+      height: 470px;
+      filter: saturate(.65);
+    }
+
+    .about-images::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      right: 0;
+      bottom: 0;
+      border: 1px solid var(--gold);
+      z-index: -1;
+    }
+
+    .about-label {
+      position: absolute;
+      bottom: 60px;
+      left: 25px;
+      right: 60px;
+      background: #101c2ae8;
+      color: white;
+      padding: 18px 22px;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .about-copy p {
       color: var(--muted);
-      font-size: 17px;
-      max-width: 690px;
+      font-size: 14px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 8px;
+      margin-top: 12px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+    }
+
+    .section-heading p {
+      max-width: 370px;
+      color: var(--muted);
+      font-size: 13px;
       margin-bottom: 0;
     }
 
     .services {
-      background: #edf1e9;
+      background: #eeeae2;
     }
 
-    .notice {
-      max-width: 800px;
-      color: var(--muted);
-      border-left: 3px solid #8fa789;
-      padding-left: 17px;
-      font-size: 14px;
-      margin-bottom: 35px;
+    .service-note {
+      max-width: 850px;
+      color: #68665e;
+      font-size: 11px;
+      padding: 12px 16px;
+      border-left: 2px solid var(--gold);
+      background: #ffffff70;
+      margin-bottom: 30px;
     }
 
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid #cbd6c7;
-      border-left: 1px solid #cbd6c7;
+      gap: 1px;
+      background: #d6d0c3;
+      border: 1px solid #d6d0c3;
     }
 
     .service-card {
-      padding: 32px;
-      border-right: 1px solid #cbd6c7;
-      border-bottom: 1px solid #cbd6c7;
+      background: var(--ivory);
+      padding: 35px;
+      transition: background .25s ease;
+    }
+
+    .service-card:hover {
+      background: white;
+    }
+
+    .service-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 36px;
     }
 
     .service-number {
-      display: block;
-      margin-bottom: 27px;
-      font-size: 12px;
-      color: var(--muted);
+      color: #8a734c;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .service-symbol {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      color: #9e8353;
     }
 
     .service-card h3 {
-      margin-bottom: 14px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 29px;
+      margin-bottom: 15px;
     }
 
     .service-card p {
+      font-size: 12px;
       color: var(--muted);
-      font-size: 14px;
       margin-bottom: 0;
     }
 
-    .doctors-grid {
+    .philosophy {
+      position: relative;
+      background: var(--navy);
+      color: white;
+      overflow: hidden;
+    }
+
+    .philosophy::after {
+      content: "29";
+      position: absolute;
+      right: -10px;
+      bottom: -170px;
+      color: #ffffff03;
+      font-family: Georgia, serif;
+      font-size: 600px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .philosophy .eyebrow {
+      color: var(--gold);
+    }
+
+    .philosophy-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 35px;
-      margin-top: 35px;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .philosophy p {
+      color: #b8c2cd;
+      font-size: 14px;
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 35px 1fr;
+      gap: 18px;
+      padding: 23px 0;
+      border-bottom: 1px solid #ffffff20;
+    }
+
+    .principle:first-child {
+      padding-top: 0;
+    }
+
+    .principle-number {
+      font-size: 11px;
+      color: var(--gold);
+    }
+
+    .principle h3 {
+      font-size: 16px;
+      margin-bottom: 9px;
+    }
+
+    .principle p {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+
+    .doctor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
     }
 
     .doctor-photo {
-      background: #e9e8df;
-      border-radius: var(--radius);
-      min-height: 285px;
+      position: relative;
+      height: 470px;
+      overflow: hidden;
+      background: #e4e2dc;
+    }
+
+    .doctor-photo img {
+      height: 100%;
+      object-position: center 25%;
+      filter: saturate(.5);
+      transition: transform .6s ease;
+    }
+
+    .doctor-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .photo-disclaimer {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      background: #101c2ae8;
+      padding: 9px 13px;
+      color: #f0e6d3;
+      font-size: 9px;
+      line-height: 1.6;
+    }
+
+    .doctor-info {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      padding: 25px;
-      text-align: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding-top: 23px;
     }
 
-    .initials {
-      width: 110px;
-      height: 110px;
-      display: grid;
-      place-items: center;
-      border: 1px solid #b6c1b2;
-      border-radius: 50%;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 36px;
-      color: #526952;
+    .doctor-info h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 30px;
+      margin-bottom: 7px;
     }
 
-    .doctor-photo small {
-      color: var(--muted);
+    .doctor-info p {
+      max-width: 390px;
       font-size: 12px;
-    }
-
-    .doctor-card h3 {
-      margin-top: 24px;
-      margin-bottom: 10px;
-    }
-
-    .doctor-card p {
       color: var(--muted);
-      font-size: 14px;
-      max-width: 450px;
+      margin: 0;
     }
 
-    .steps-section {
-      background: var(--mint);
-      padding: 45px 0;
+    .doctor-arrow {
+      font-size: 28px;
+      color: #987f53;
+    }
+
+    .journey {
+      border-top: 1px solid var(--line);
+      background: white;
+    }
+
+    .center-heading {
+      max-width: 760px;
+      margin: 0 auto 55px;
+      text-align: center;
     }
 
     .steps {
@@ -488,236 +726,369 @@
       padding: 0;
       margin: 0;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 35px;
     }
 
-    .steps li {
-      font-size: 19px;
-    }
-
-    .steps span {
+    .step-number {
       display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 49px;
+      color: #aa8e5e;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+      margin-bottom: 23px;
+    }
+
+    .steps h3 {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .steps p {
       font-size: 12px;
-      margin-bottom: 10px;
+      color: var(--muted);
+      margin-bottom: 0;
     }
 
     .faq-grid {
       display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 65px;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 90px;
     }
 
     details {
-      padding: 22px 0;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--line);
+      padding: 23px 0;
     }
 
     details:first-child {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
     }
 
     summary {
       cursor: pointer;
-      font-weight: bold;
-      padding-right: 12px;
+      padding-right: 15px;
+      font-size: 13px;
+      font-weight: 600;
     }
 
     details p {
-      margin-top: 15px;
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .contact {
-      background: var(--green);
-      color: #f5f6ec;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 75px;
-    }
-
-    .contact-phone {
-      font-size: clamp(23px, 3vw, 37px);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .button-light {
-      background: var(--mint);
-      color: var(--green);
-    }
-
-    .button-light:hover {
-      background: white;
-      color: var(--green);
-    }
-
-    .email {
-      font-size: 14px;
-    }
-
-    .contact-details {
-      border-left: 1px solid #54756a;
-      padding-left: 40px;
-    }
-
-    .contact-details h3 {
-      font-weight: 500;
-    }
-
-    .contact-details p {
-      color: #d5e1d5;
-      font-size: 14px;
-    }
-
-    .contact-details .map-note {
-      font-size: 11px;
-      margin-top: 12px;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      padding: 30px 0;
-    }
-
-    .footer-inner p {
-      margin: 0;
+      margin: 15px 0 0;
       color: var(--muted);
       font-size: 12px;
     }
 
-    .back-top {
-      font-size: 24px;
-      text-decoration: none;
+    .contact {
+      background: var(--navy);
+      color: white;
     }
 
-    @media (max-width: 1000px) {
+    .contact .eyebrow {
+      color: var(--gold);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 90px;
+    }
+
+    .contact-intro {
+      color: #b7c1cb;
+      max-width: 440px;
+      font-size: 13px;
+    }
+
+    .phone-large {
+      display: inline-block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(32px, 4vw, 50px);
+      letter-spacing: -1px;
+      margin-top: 10px;
+    }
+
+    .contact-panel {
+      border: 1px solid #ffffff25;
+      padding: 38px;
+      background: #ffffff03;
+    }
+
+    .contact-row {
+      padding: 19px 0;
+      border-bottom: 1px solid #ffffff18;
+    }
+
+    .contact-row:first-child {
+      padding-top: 0;
+    }
+
+    .contact-row:last-child {
+      border: 0;
+      padding-bottom: 0;
+    }
+
+    .contact-row small {
+      display: block;
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 2px;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+    }
+
+    .contact-row p {
+      margin: 0;
+      color: #d6dce1;
+      font-size: 13px;
+    }
+
+    .contact-row .small-note {
+      margin-top: 6px;
+      color: #a9b5c0;
+      font-size: 10px;
+    }
+
+    .map-link {
+      display: inline-flex;
+      gap: 25px;
+      border-bottom: 1px solid var(--gold);
+      margin-top: 12px;
+      font-size: 11px;
+      padding-bottom: 5px;
+    }
+
+    footer {
+      background: #0b141f;
+      color: #b5bec7;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      padding: 38px 0;
+      border-bottom: 1px solid #ffffff15;
+    }
+
+    .footer-top .logo {
+      color: white;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      font-size: 11px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 20px 0;
+      font-size: 9px;
+      letter-spacing: .5px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .skip {
+      position: absolute;
+      top: -100px;
+      left: 20px;
+      z-index: 20;
+      background: white;
+      color: black;
+      padding: 12px;
+    }
+
+    .skip:focus {
+      top: 10px;
+    }
+
+    @media (min-width: 1500px) {
+      .hero-image {
+        margin-right: calc((1240px - 100vw) / 2);
+      }
+    }
+
+    @media (max-width: 1050px) {
       .header-inner {
         flex-wrap: wrap;
         padding: 20px 0;
-        gap: 15px;
       }
 
-      .nav {
-        order: 3;
+      nav {
         width: 100%;
-        gap: 22px;
+        order: 3;
+        gap: 25px;
       }
 
-      .hero {
-        gap: 30px;
+      .hero-grid {
+        min-height: 620px;
       }
 
-      .hero-art {
-        min-height: 410px;
+      .hero-copy {
+        padding-right: 25px;
       }
 
-      .service-card {
-        padding: 25px;
-      }
-
-      .contact-grid {
-        gap: 35px;
-      }
-    }
-
-    @media (max-width: 680px) {
-      h1 {
-        letter-spacing: -1px;
-      }
-
-      .top-phone {
-        font-size: 12px;
-      }
-
-      .language-options {
-        gap: 2px;
-      }
-
-      .language-options label {
-        padding: 4px 7px;
-        font-size: 11px;
-      }
-
-      .logo {
-        font-size: 33px;
-      }
-
-      .logo span {
-        font-size: 24px;
-      }
-
-      .header-call {
-        font-size: 12px;
-      }
-
-      .nav {
-        gap: 12px 20px;
-      }
-
-      .nav a {
-        font-size: 12px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 45px 0;
-        gap: 35px;
-      }
-
-      .lead {
-        font-size: 16px;
-      }
-
-      .hero-art {
-        min-height: 340px;
-      }
-
-      .hero-art::before {
-        width: 245px;
-        height: 245px;
-      }
-
-      .hero-art::after {
-        width: 295px;
-        height: 295px;
-      }
-
-      .monogram {
-        font-size: 120px;
-      }
-
-      .monogram-word {
-        font-size: 14px;
-      }
-
-      .sparkle {
-        top: 30px;
-        right: 30px;
-        font-size: 30px;
-      }
-
-      .ribbon-brand {
-        display: none;
-      }
-
-      .section {
-        padding: 55px 0;
+      .hero-image {
+        margin-right: -6vw;
       }
 
       .about-grid,
+      .philosophy-grid,
+      .faq-grid,
+      .contact-grid {
+        gap: 45px;
+      }
+
+      .service-card {
+        padding: 27px;
+      }
+
+      .doctor-photo {
+        height: 390px;
+      }
+
+      .steps {
+        gap: 25px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 70px 0;
+      }
+
+      .container {
+        width: 88%;
+      }
+
+      .topbar-location {
+        display: none;
+      }
+
+      .topbar-inner {
+        justify-content: center;
+      }
+
+      .topbar-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .header-inner {
+        gap: 20px;
+      }
+
+      .logo-mark {
+        width: 43px;
+        height: 49px;
+        font-size: 29px;
+      }
+
+      .logo-name {
+        font-size: 15px;
+        letter-spacing: 3px;
+      }
+
+      .logo-sub {
+        font-size: 7px;
+      }
+
+      .header-book {
+        padding: 10px 12px;
+        font-size: 9px;
+        gap: 10px;
+      }
+
+      nav {
+        gap: 13px 22px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 60px 0 45px;
+      }
+
+      h1 {
+        max-width: 600px;
+      }
+
+      .hero-image {
+        height: 340px;
+        min-height: 340px;
+        margin: 0 -7vw;
+      }
+
+      .hero-image::after {
+        background: linear-gradient(
+          180deg,
+          var(--navy),
+          rgba(16,28,42,.05) 40%,
+          rgba(16,28,42,.15)
+        );
+      }
+
+      .hero-image img {
+        object-position: center 40%;
+      }
+
+      .hero-bottom {
+        margin-top: 30px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-item,
+      .info-item:first-child {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 16px 0;
+      }
+
+      .info-item:last-child {
+        border-bottom: 0;
+      }
+
+      .about-grid,
+      .philosophy-grid,
       .faq-grid,
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 40px;
+      }
+
+      .about-image {
+        height: 370px;
+      }
+
+      .about-images {
+        max-width: 560px;
+      }
+
+      .section-heading {
+        display: block;
+        margin-bottom: 30px;
+      }
+
+      .section-heading p {
+        margin-top: 20px;
+        max-width: 550px;
       }
 
       .service-grid {
@@ -725,68 +1096,104 @@
       }
 
       .service-card {
-        padding: 23px 16px;
+        padding: 24px 20px;
       }
 
       .service-card h3 {
-        font-size: 17px;
+        font-size: 25px;
       }
 
-      .service-card p {
-        font-size: 13px;
+      .service-top {
+        margin-bottom: 25px;
       }
 
-      .doctors-grid {
+      .doctor-grid {
+        gap: 25px;
+      }
+
+      .doctor-photo {
+        height: 320px;
+      }
+
+      .doctor-info h3 {
+        font-size: 25px;
+      }
+
+      .doctor-arrow {
+        display: none;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .contact-panel {
+        padding: 28px;
+      }
+
+      .footer-top {
+        align-items: flex-start;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 9px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 59px;
+        letter-spacing: -2px;
+      }
+
+      .header-book {
+        font-size: 8px;
+        padding: 10px;
+      }
+
+      .header-book .arrow {
+        display: none;
+      }
+
+      .logo {
+        gap: 9px;
+      }
+
+      .service-grid,
+      .doctor-grid {
         grid-template-columns: 1fr;
       }
 
       .doctor-photo {
-        min-height: 245px;
+        height: 400px;
+      }
+
+      .service-card {
+        padding: 28px;
       }
 
       .steps {
-        grid-template-columns: 1fr;
-        gap: 23px;
+        gap: 25px 20px;
       }
 
-      .steps li {
-        display: flex;
-        align-items: baseline;
-        gap: 20px;
-        font-size: 17px;
+      .steps h3 {
+        font-size: 13px;
       }
 
-      .steps span {
-        margin: 0;
+      .steps p {
+        font-size: 11px;
       }
 
-      .contact-details {
-        border-left: 0;
-        border-top: 1px solid #54756a;
-        padding: 25px 0 0;
+      .actions {
+        gap: 12px;
       }
 
-      .footer-inner {
-        flex-wrap: wrap;
-      }
-
-      .footer-inner p {
-        order: 3;
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .language-inner {
-        gap: 7px;
-      }
-
-      .header-call {
-        display: none;
+      .button {
+        font-size: 10px;
+        padding: 15px 18px;
+        gap: 18px;
       }
     }
 
@@ -795,7 +1202,7 @@
         scroll-behavior: auto;
       }
 
-      * {
+      *, *::before, *::after {
         transition: none !important;
         animation: none !important;
       }
@@ -804,797 +1211,1038 @@
 </head>
 
 <body>
+  <input class="language-input" type="radio"
+         name="language" id="en" aria-label="English" checked>
+  <input class="language-input" type="radio"
+         name="language" id="hy" aria-label="Հայերեն">
+  <input class="language-input" type="radio"
+         name="language" id="ru" aria-label="Русский">
 
-  <!-- Language controls: keyboard-accessible and JavaScript-free -->
-  <input class="language-radio" type="radio"
-         name="language" id="lang-hy"
-         aria-label="Հայերեն" checked>
+  <div class="site">
+    <a class="skip" href="#main">Skip to content</a>
 
-  <input class="language-radio" type="radio"
-         name="language" id="lang-en"
-         aria-label="English">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span class="topbar-location">
+          KAPAN · SYUNIK · ARMENIA
+        </span>
 
-  <input class="language-radio" type="radio"
-         name="language" id="lang-ru"
-         aria-label="Русский">
+        <div class="topbar-right">
+          <a href="tel:+37499292929">+374 99 29 29 29</a>
 
-  <div class="language-bar">
-    <div class="container language-inner">
-      <a class="top-phone" href="tel:+37499292929">
-        +374 99 29 29 29
-      </a>
-
-      <div class="language-options">
-        <label for="lang-hy" lang="hy">ՀԱՅ</label>
-        <label for="lang-en" lang="en">EN</label>
-        <label for="lang-ru" lang="ru">РУС</label>
+          <div class="languages" role="group" aria-label="Website language">
+            <label for="en" lang="en">EN</label>
+            <label for="hy" lang="hy">ՀԱՅ</label>
+            <label for="ru" lang="ru">РУС</label>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ==================== ARMENIAN ==================== -->
-
-  <div class="page page-hy" lang="hy">
-    <a class="skip-link" href="#main-hy">Անցնել բովանդակությանը</a>
-
-    <header class="header">
+    <header>
       <div class="container header-inner">
-        <a class="logo" href="#main-hy" aria-label="29 Dent">
-          29<span>Dent</span><b aria-hidden="true">✦</b>
-        </a>
-
-        <nav class="nav" aria-label="Հիմնական ընտրացանկ">
-          <a href="#about-hy">Մեր մասին</a>
-          <a href="#services-hy">Ծառայություններ</a>
-          <a href="#doctors-hy">Բժիշկներ</a>
-          <a href="#contact-hy">Կապ</a>
-        </nav>
-
-        <a class="header-call" href="tel:+37499292929">
-          Զանգահարել ↗
-        </a>
-      </div>
-    </header>
-
-    <main id="main-hy">
-      <section class="container hero">
-        <div>
-          <p class="eyebrow">ԿԱՊԱՆ · ՀԱՅԱՍՏԱՆ</p>
-          <h1>Ձեր ժպիտը՝ ուշադրության կենտրոնում։</h1>
-          <p class="lead">
-            Բարի գալուստ 29 Dent։ Կապվեք մեզ հետ՝
-            Ձեր ատամների խնամքը քննարկելու և այցի գրանցվելու համար։
-          </p>
-
-          <div class="actions">
-            <a class="button" href="https://wa.me/37499292929">
-              Գրանցվել այցի <span aria-hidden="true">↗</span>
-            </a>
-            <a class="text-link" href="tel:+37499292929">
-              Զանգահարել
-            </a>
-          </div>
-
-          <p class="hours-small">
-            Երկուշաբթի–շաբաթ · 10:00–19:00
-          </p>
-        </div>
-
-        <div class="hero-art" role="img"
-             aria-label="29 Dent տարբերանշան. կլինիկայի լուսանկարը կավելացվի">
-          <span class="sparkle" aria-hidden="true">✦</span>
-          <div class="monogram">29</div>
-          <div class="monogram-word">DENT</div>
-          <span class="photo-note">
-            Կլինիկայի լուսանկարը կավելացվի
+        <a class="logo" href="#main" aria-label="29 Dent home">
+          <span class="logo-mark">29</span>
+          <span>
+            <span class="logo-name">29 DENT</span>
+            <span class="logo-sub">Dental Clinic · Kapan</span>
           </span>
-        </div>
-      </section>
-
-      <div class="ribbon">
-        <div class="container ribbon-inner">
-          <span class="ribbon-brand">29 DENT</span>
-          <span>Հայաստան, Սյունիք, Կապան</span>
-          <a href="tel:+37499292929">+374 99 29 29 29 ↗</a>
-        </div>
-      </div>
-
-      <section id="about-hy" class="container section about-grid">
-        <p class="eyebrow">01 / ՄԵՐ ՄԱՍԻՆ</p>
-        <div>
-          <h2>Ձեր ժպիտի խնամքը սկսվում է այստեղ։</h2>
-          <p class="body-copy">
-            29 Dent-ը ստոմատոլոգիական կլինիկա է Սյունիքի մարզի
-            Կապան քաղաքում։ Կապվեք մեր թիմի հետ՝ Ձեր գանգատները,
-            բուժման հնարավոր տարբերակները և առաջիկա այցը քննարկելու համար։
-            Գրանցումը կարող եք կատարել հեռախոսով կամ WhatsApp-ով։
-          </p>
-        </div>
-      </section>
-
-      <section id="services-hy" class="services section">
-        <div class="container">
-          <p class="eyebrow">02 / ԾԱՌԱՅՈՒԹՅՈՒՆՆԵՐ</p>
-          <h2>Ստոմատոլոգիական ուղղություններ</h2>
-
-          <!-- Confirm this service list with the clinic before launch. -->
-          <p class="notice">
-            29 Dent-ում ստորև նշված ծառայությունների առկայությունը
-            պետք է հաստատել կլինիկայի հետ՝ նախքան կոնկրետ բուժման գրանցվելը։
-          </p>
-
-          <div class="service-grid">
-            <article class="service-card">
-              <span class="service-number">01</span>
-              <h3>Կանխարգելիչ խնամք</h3>
-              <p>Ատամների զննում, մասնագիտական մաքրում և բերանի խոռոչի խնամքի քննարկում։</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">02</span>
-              <h3>Ատամների վերականգնում</h3>
-              <p>Կարիեսի բուժման, պլոմբավորման և վնասված ատամների վերականգնման տարբերակներ։</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">03</span>
-              <h3>Արմատախողովակների բուժում</h3>
-              <p>Ատամի ներսում գտնվող հյուսվածքների և արմատախողովակների բուժում։</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">04</span>
-              <h3>Պսակներ և պրոթեզավորում</h3>
-              <p>Վնասված կամ բացակայող ատամների վերականգնման և փոխարինման տարբերակներ։</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">05</span>
-              <h3>Վիրաբուժություն և իմպլանտացիա</h3>
-              <p>Ճշտեք ատամների հեռացման և իմպլանտացիայի խորհրդատվության հնարավորությունը։</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">06</span>
-              <h3>Օրթոդոնտիա և էսթետիկա</h3>
-              <p>Ճշտեք ատամների դիրքի շտկման և ժպիտի էսթետիկ բարելավման տարբերակները։</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="doctors-hy" class="container section">
-        <p class="eyebrow">03 / ԲԺԻՇԿՆԵՐ</p>
-        <h2>Ծանոթացեք մեր բժիշկներին</h2>
-
-        <div class="doctors-grid">
-          <article class="doctor-card">
-            <div class="doctor-photo">
-              <span class="initials" aria-hidden="true">ՀՀ</span>
-              <small>Բժշկի լուսանկարը կավելացվի</small>
-            </div>
-            <h3>Հովհաննես Հայրապետյան</h3>
-            <p>Երևանի պետական բժշկական համալսարանի՝ ԵՊԲՀ-ի շրջանավարտ։</p>
-          </article>
-
-          <article class="doctor-card">
-            <div class="doctor-photo">
-              <span class="initials" aria-hidden="true">ՎԾ</span>
-              <small>Բժշկի լուսանկարը կավելացվի</small>
-            </div>
-            <h3>Վիլեն Ծատրյան</h3>
-            <p>Երևանի պետական բժշկական համալսարանի՝ ԵՊԲՀ-ի շրջանավարտ։</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="steps-section">
-        <div class="container">
-          <p class="eyebrow">ՁԵՐ ՀԱՋՈՐԴ ՔԱՅԼԸ</p>
-          <ol class="steps">
-            <li><span>01</span> Կապվեք մեզ հետ</li>
-            <li><span>02</span> Քննարկեք այցը</li>
-            <li><span>03</span> Հաստատեք գրանցումը</li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="container section faq-grid">
-        <div>
-          <p class="eyebrow">ՀԱՃԱԽ ՏՐՎՈՂ ՀԱՐՑԵՐ</p>
-          <h2>Այցից առաջ</h2>
-        </div>
-
-        <div>
-          <details>
-            <summary>Ինչպե՞ս գրանցվել այցի։</summary>
-            <p>
-              Զանգահարեք +374 99 29 29 29 կամ գրեք WhatsApp-ով։
-              Այցը հաստատվում է կլինիկայի պատասխանով։
-            </p>
-          </details>
-
-          <details>
-            <summary>Որքա՞ն արժե բուժումը։</summary>
-            <p>
-              Գները ճշտեք կլինիկայից։ Բուժման պլանն ու վերջնական
-              արժեքը պետք է համաձայնեցնել զննումից հետո։
-            </p>
-          </details>
-
-          <details>
-            <summary>Որտե՞ղ է գտնվում կլինիկան։</summary>
-            <p>
-              Հայաստան, Սյունիքի մարզ, Կապան։
-              Փողոցի ճշգրիտ հասցեն կավելացվի։
-              Այցից առաջ զանգահարեք՝ ճանապարհը ճշտելու համար։
-            </p>
-          </details>
-
-          <details>
-            <summary>Ի՞նչ բերել առաջին այցին։</summary>
-            <p>
-              Բերեք առկա ստոմատոլոգիական փաստաթղթերը և ընդունվող
-              դեղերի ցանկը։ Այլ անհրաժեշտ տեղեկությունների մասին
-              նախապես ճշտեք կլինիկայից։
-            </p>
-          </details>
-        </div>
-      </section>
-
-      <section id="contact-hy" class="contact section">
-        <div class="container contact-grid">
-          <div>
-            <p class="eyebrow">04 / ԿԱՊ</p>
-            <h2>Պլանավորենք Ձեր այցը։</h2>
-            <a class="contact-phone" href="tel:+37499292929">
-              +374 99 29 29 29
-            </a>
-
-            <div class="actions">
-              <a class="button button-light" href="https://wa.me/37499292929">
-                WhatsApp ↗
-              </a>
-              <a class="email" href="mailto:29dent@gmail.com">
-                29dent@gmail.com
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-details">
-            <h3>Հայաստան, Սյունիք, Կապան</h3>
-            <p>
-              Փողոցի ճշգրիտ հասցեն կավելացվի։
-              Ճանապարհը ճշտեք զանգով։
-            </p>
-            <p>
-              Երկուշաբթի–շաբաթ<br>
-              10:00–19:00
-            </p>
-
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Kapan%2C%20Armenia">
-              Դիտել Կապանը Google Maps-ում ↗
-            </a>
-            <p class="map-note">
-              Քարտեզը ցույց է տալիս Կապանը, ոչ թե կլինիկայի հաստատված հասցեն։
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container footer-inner">
-        <a class="logo" href="#main-hy">29<span>Dent</span></a>
-        <p>© 2026 29 Dent · Ստոմատոլոգիական կլինիկա · Կապան</p>
-        <a class="back-top" href="#main-hy" aria-label="Վերադառնալ վերև">↑</a>
-      </div>
-    </footer>
-  </div>
-
-  <!-- ==================== ENGLISH ==================== -->
-
-  <div class="page page-en" lang="en">
-    <a class="skip-link" href="#main-en">Skip to content</a>
-
-    <header class="header">
-      <div class="container header-inner">
-        <a class="logo" href="#main-en" aria-label="29 Dent">
-          29<span>Dent</span><b aria-hidden="true">✦</b>
         </a>
 
-        <nav class="nav" aria-label="Main navigation">
-          <a href="#about-en">About</a>
-          <a href="#services-en">Services</a>
-          <a href="#doctors-en">Dentists</a>
-          <a href="#contact-en">Contact</a>
+        <nav aria-label="Main navigation">
+          <a href="#about">
+            <span class="t en" lang="en">The clinic</span>
+            <span class="t hy" lang="hy">Կլինիկան</span>
+            <span class="t ru" lang="ru">Клиника</span>
+          </a>
+          <a href="#services">
+            <span class="t en" lang="en">Dental care</span>
+            <span class="t hy" lang="hy">Ծառայություններ</span>
+            <span class="t ru" lang="ru">Услуги</span>
+          </a>
+          <a href="#doctors">
+            <span class="t en" lang="en">Our dentists</span>
+            <span class="t hy" lang="hy">Բժիշկներ</span>
+            <span class="t ru" lang="ru">Врачи</span>
+          </a>
+          <a href="#visit">
+            <span class="t en" lang="en">Your visit</span>
+            <span class="t hy" lang="hy">Ձեր այցը</span>
+            <span class="t ru" lang="ru">Ваш визит</span>
+          </a>
+          <a href="#contact">
+            <span class="t en" lang="en">Contact</span>
+            <span class="t hy" lang="hy">Կապ</span>
+            <span class="t ru" lang="ru">Контакты</span>
+          </a>
         </nav>
 
-        <a class="header-call" href="tel:+37499292929">Call us ↗</a>
+        <a class="button header-book" href="https://wa.me/37499292929">
+          <span class="t en" lang="en">Book a visit</span>
+          <span class="t hy" lang="hy">Գրանցվել</span>
+          <span class="t ru" lang="ru">Записаться</span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
     </header>
 
-    <main id="main-en">
-      <section class="container hero">
-        <div>
-          <p class="eyebrow">KAPAN · ARMENIA</p>
-          <h1>Your smile.<br>Our attention.</h1>
-          <p class="lead">
-            Welcome to 29 Dent. Get in touch to discuss your
-            dental care and arrange a visit to our clinic in Kapan.
-          </p>
+    <main id="main">
 
-          <div class="actions">
-            <a class="button" href="https://wa.me/37499292929">
-              Book an appointment <span aria-hidden="true">↗</span>
-            </a>
-            <a class="text-link" href="tel:+37499292929">Call us</a>
+      <!-- HERO -->
+
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">
+              <span class="t en" lang="en">29 Dent · Kapan, Armenia</span>
+              <span class="t hy" lang="hy">29 Dent · Կապան, Հայաստան</span>
+              <span class="t ru" lang="ru">29 Dent · Капан, Армения</span>
+            </span>
+
+            <h1>
+              <span class="t en" lang="en">
+                A smile.<br>
+                A story.<br>
+                <em>Entirely yours.</em>
+              </span>
+              <span class="t hy" lang="hy">
+                Ձեր ժպիտը։<br>
+                Ձեր պատմությունը։
+              </span>
+              <span class="t ru" lang="ru">
+                Ваша улыбка.<br>
+                <em>Ваша история.</em>
+              </span>
+            </h1>
+
+            <p class="lead">
+              <span class="t en" lang="en">
+                Dental care begins with a conversation.
+                Meet 29 Dent in Kapan and take the next step
+                towards caring for your smile.
+              </span>
+              <span class="t hy" lang="hy">
+                Ատամների խնամքը սկսվում է զրույցից։
+                Ծանոթացեք 29 Dent-ին Կապանում և կատարեք
+                Ձեր ժպիտի խնամքի հաջորդ քայլը։
+              </span>
+              <span class="t ru" lang="ru">
+                Забота о зубах начинается с разговора.
+                Познакомьтесь с 29 Dent в Капане и сделайте
+                следующий шаг к заботе о своей улыбке.
+              </span>
+            </p>
+
+            <div class="actions">
+              <a class="button" href="https://wa.me/37499292929">
+                <span class="t en" lang="en">Book an appointment</span>
+                <span class="t hy" lang="hy">Գրանցվել այցի</span>
+                <span class="t ru" lang="ru">Записаться на приём</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a class="button button-outline" href="tel:+37499292929">
+                <span class="t en" lang="en">Call the clinic</span>
+                <span class="t hy" lang="hy">Զանգահարել</span>
+                <span class="t ru" lang="ru">Позвонить</span>
+              </a>
+            </div>
+
+            <div class="hero-bottom">
+              <span class="t en" lang="en">
+                Monday–Saturday · 10:00–19:00
+              </span>
+              <span class="t hy" lang="hy">
+                Երկուշաբթի–շաբաթ · 10:00–19:00
+              </span>
+              <span class="t ru" lang="ru">
+                Понедельник–суббота · 10:00–19:00
+              </span>
+            </div>
           </div>
 
-          <p class="hours-small">Monday–Saturday · 10:00–19:00</p>
-        </div>
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"
+              alt="Illustrative dental treatment photograph; not the 29 Dent clinic"
+              fetchpriority="high"
+              width="1400"
+              height="1500">
 
-        <div class="hero-art" role="img"
-             aria-label="29 Dent monogram. Clinic photography to be added.">
-          <span class="sparkle" aria-hidden="true">✦</span>
-          <div class="monogram">29</div>
-          <div class="monogram-word">DENT</div>
-          <span class="photo-note">Clinic photography to be added</span>
-        </div>
-      </section>
-
-      <div class="ribbon">
-        <div class="container ribbon-inner">
-          <span class="ribbon-brand">29 DENT</span>
-          <span>Kapan, Syunik, Armenia</span>
-          <a href="tel:+37499292929">+374 99 29 29 29 ↗</a>
-        </div>
-      </div>
-
-      <section id="about-en" class="container section about-grid">
-        <p class="eyebrow">01 / ABOUT US</p>
-        <div>
-          <h2>A place to start with your smile.</h2>
-          <p class="body-copy">
-            29 Dent is a dental clinic in Kapan, in Armenia’s Syunik region.
-            Contact our team to discuss your concerns, explore treatment
-            options, and arrange your next visit. Appointments can be
-            requested by phone or WhatsApp.
-          </p>
+            <div class="image-caption">
+              <span class="t en" lang="en">Illustrative photography · Not our clinic</span>
+              <span class="t hy" lang="hy">Պատկերազարդող լուսանկար · Մեր կլինիկան չէ</span>
+              <span class="t ru" lang="ru">Иллюстративное фото · Не наша клиника</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="services-en" class="services section">
+      <!-- QUICK INFORMATION -->
+
+      <section class="info-strip" aria-label="Clinic information">
+        <div class="container info-grid">
+          <div class="info-item">
+            <small>
+              <span class="t en" lang="en">Visit us</span>
+              <span class="t hy" lang="hy">Մեր քաղաքը</span>
+              <span class="t ru" lang="ru">Наш город</span>
+            </small>
+            <strong>
+              <span class="t en" lang="en">Kapan, Syunik, Armenia</span>
+              <span class="t hy" lang="hy">Հայաստան, Սյունիք, Կապան</span>
+              <span class="t ru" lang="ru">Армения, Сюник, Капан</span>
+            </strong>
+          </div>
+
+          <div class="info-item">
+            <small>
+              <span class="t en" lang="en">Opening hours</span>
+              <span class="t hy" lang="hy">Աշխատաժամեր</span>
+              <span class="t ru" lang="ru">Часы работы</span>
+            </small>
+            <strong>
+              <span class="t en" lang="en">Mon–Sat · 10:00–19:00</span>
+              <span class="t hy" lang="hy">Երկուշաբթի–շաբաթ · 10:00–19:00</span>
+              <span class="t ru" lang="ru">Пн–Сб · 10:00–19:00</span>
+            </strong>
+          </div>
+
+          <div class="info-item">
+            <small>
+              <span class="t en" lang="en">Appointments</span>
+              <span class="t hy" lang="hy">Գրանցում</span>
+              <span class="t ru" lang="ru">Запись</span>
+            </small>
+            <strong>
+              <a href="tel:+37499292929">+374 99 29 29 29</a>
+              &nbsp; / &nbsp;
+              <a href="https://wa.me/37499292929">WhatsApp ↗</a>
+            </strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+
+      <section id="about" class="section">
+        <div class="container about-grid">
+          <div class="about-images">
+            <img
+              class="about-image"
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+              alt="Illustrative dental clinic interior; not the 29 Dent premises"
+              loading="lazy"
+              width="1000"
+              height="1200">
+
+            <div class="about-label">
+              <span class="t en" lang="en">INTERIOR INSPIRATION · NOT OUR PREMISES</span>
+              <span class="t hy" lang="hy">ՊԱՏԿԵՐԱԶԱՐԴՈՂ ԼՈՒՍԱՆԿԱՐ · ՄԵՐ ՏԱՐԱԾՔԸ ՉԷ</span>
+              <span class="t ru" lang="ru">ПРИМЕР ИНТЕРЬЕРА · НЕ НАШЕ ПОМЕЩЕНИЕ</span>
+            </div>
+          </div>
+
+          <div class="about-copy">
+            <span class="eyebrow">
+              <span class="t en" lang="en">The clinic / 01</span>
+              <span class="t hy" lang="hy">Կլինիկան / 01</span>
+              <span class="t ru" lang="ru">Клиника / 01</span>
+            </span>
+
+            <h2>
+              <span class="t en" lang="en">A considered approach<br>to your next visit.</span>
+              <span class="t hy" lang="hy">Ձեր հաջորդ այցը՝ ուշադրության կենտրոնում։</span>
+              <span class="t ru" lang="ru">Внимание к вашему следующему визиту.</span>
+            </h2>
+
+            <p>
+              <span class="t en" lang="en">
+                29 Dent is a dental clinic in Kapan, in Armenia’s
+                Syunik region. Our dentists are Hovhannes Hayrapetyan
+                and Vilen Tsatryan, graduates of Yerevan State
+                Medical University.
+              </span>
+              <span class="t hy" lang="hy">
+                29 Dent-ը ստոմատոլոգիական կլինիկա է Սյունիքի մարզի
+                Կապան քաղաքում։ Մեր բժիշկներն են Երևանի պետական
+                բժշկական համալսարանի շրջանավարտներ Հովհաննես
+                Հայրապետյանը և Վիլեն Ծատրյանը։
+              </span>
+              <span class="t ru" lang="ru">
+                29 Dent — стоматологическая клиника в Капане,
+                Сюникская область, Армения. Наши врачи — Ованнес
+                Айрапетян и Вилен Цатрян, выпускники Ереванского
+                государственного медицинского университета.
+              </span>
+            </p>
+
+            <p>
+              <span class="t en" lang="en">
+                Whether you have a specific concern or are considering
+                your next dental appointment, contact the clinic to
+                discuss your needs, available services, and a suitable
+                time for your visit.
+              </span>
+              <span class="t hy" lang="hy">
+                Եթե ունեք կոնկրետ գանգատ կամ պլանավորում եք
+                ստոմատոլոգիական այց, կապվեք կլինիկայի հետ՝
+                Ձեր կարիքները, հասանելի ծառայությունները և
+                այցի հարմար ժամը քննարկելու համար։
+              </span>
+              <span class="t ru" lang="ru">
+                Если у вас есть конкретная жалоба или вы планируете
+                следующий приём, свяжитесь с клиникой, чтобы обсудить
+                ваши вопросы, доступные услуги и удобное время визита.
+              </span>
+            </p>
+
+            <a class="text-link" href="#doctors">
+              <span class="t en" lang="en">Meet the dentists</span>
+              <span class="t hy" lang="hy">Ծանոթանալ բժիշկներին</span>
+              <span class="t ru" lang="ru">Познакомиться с врачами</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+
+      <section id="services" class="section services">
         <div class="container">
-          <p class="eyebrow">02 / SERVICES</p>
-          <h2>Explore dental care</h2>
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">
+                <span class="t en" lang="en">Dental care / 02</span>
+                <span class="t hy" lang="hy">Ծառայություններ / 02</span>
+                <span class="t ru" lang="ru">Услуги / 02</span>
+              </span>
 
-          <p class="notice">
-            Availability of the services below at 29 Dent needs to be
-            confirmed with the clinic before booking a specific treatment.
+              <h2>
+                <span class="t en" lang="en">Explore the possibilities<br>for your smile.</span>
+                <span class="t hy" lang="hy">Ձեր ժպիտի խնամքի հնարավորությունները։</span>
+                <span class="t ru" lang="ru">Возможности заботы<br>о вашей улыбке.</span>
+              </h2>
+            </div>
+
+            <p>
+              <span class="t en" lang="en">
+                An introduction to common areas of dental care.
+                Discuss suitability, availability, and pricing
+                directly with the clinic.
+              </span>
+              <span class="t hy" lang="hy">
+                Ծանոթացեք ստոմատոլոգիական հիմնական ուղղություններին։
+                Բուժման նպատակահարմարությունը, առկայությունը և
+                գինը ճշտեք կլինիկայից։
+              </span>
+              <span class="t ru" lang="ru">
+                Знакомство с основными направлениями стоматологии.
+                Возможность лечения, наличие услуг и стоимость
+                уточняйте в клинике.
+              </span>
+            </p>
+          </div>
+
+          <p class="service-note">
+            <span class="t en" lang="en">
+              Service list awaiting clinic confirmation.
+              These categories do not yet confirm that every treatment is offered at 29 Dent.
+            </span>
+            <span class="t hy" lang="hy">
+              Ծառայությունների ցանկը ենթակա է կլինիկայի հաստատմանը։
+              Նշված բոլոր բուժումների առկայությունը 29 Dent-ում դեռ հաստատված չէ։
+            </span>
+            <span class="t ru" lang="ru">
+              Список услуг ожидает подтверждения клиники.
+              Наличие всех перечисленных видов лечения в 29 Dent пока не подтверждено.
+            </span>
           </p>
 
           <div class="service-grid">
             <article class="service-card">
-              <span class="service-number">01</span>
-              <h3>Preventive care</h3>
-              <p>Dental examinations, professional cleaning, and a discussion of your oral care routine.</p>
+              <div class="service-top">
+                <span class="service-number">01 / PREVENTION</span>
+                <span class="service-symbol" aria-hidden="true">✧</span>
+              </div>
+              <h3>
+                <span class="t en" lang="en">Preventive care</span>
+                <span class="t hy" lang="hy">Կանխարգելիչ խնամք</span>
+                <span class="t ru" lang="ru">Профилактика</span>
+              </h3>
+              <p>
+                <span class="t en" lang="en">
+                  Dental examinations, professional cleaning, and
+                  guidance on everyday oral hygiene. Ask what is
+                  appropriate for your next check-up.
+                </span>
+                <span class="t hy" lang="hy">
+                  Ատամների զննում, մասնագիտական մաքրում և
+                  բերանի խոռոչի ամենօրյա հիգիենայի խորհուրդներ։
+                  Ճշտեք՝ ինչ է անհրաժեշտ Ձեր հաջորդ այցին։
+                </span>
+                <span class="t ru" lang="ru">
+                  Осмотры, профессиональная чистка и рекомендации
+                  по ежедневной гигиене полости рта. Уточните,
+                  что необходимо на следующем приёме.
+                </span>
+              </p>
             </article>
 
             <article class="service-card">
-              <span class="service-number">02</span>
-              <h3>Restorative dentistry</h3>
-              <p>Options for treating decay, placing fillings, and restoring damaged teeth.</p>
+              <div class="service-top">
+                <span class="service-number">02 / RESTORATION</span>
+                <span class="service-symbol" aria-hidden="true">◇</span>
+              </div>
+              <h3>
+                <span class="t en" lang="en">Restorative dentistry</span>
+                <span class="t hy" lang="hy">Ատամների վերականգնում</span>
+                <span class="t ru" lang="ru">Восстановление зубов</span>
+              </h3>
+              <p>
+                <span class="t en" lang="en">
+                  Treatment options for decay and damaged teeth,
+                  including fillings and restorations. The proposed
+                  approach depends on the dentist’s assessment.
+                </span>
+                <span class="t hy" lang="hy">
+                  Կարիեսի և վնասված ատամների բուժման տարբերակներ՝
+                  ներառյալ պլոմբավորումը և վերականգնումը։
+                  Մոտեցումը որոշվում է բժշկի գնահատմամբ։
+                </span>
+                <span class="t ru" lang="ru">
+                  Варианты лечения кариеса и повреждённых зубов,
+                  включая пломбирование и реставрацию. Подход
+                  определяется после осмотра врача.
+                </span>
+              </p>
             </article>
 
             <article class="service-card">
-              <span class="service-number">03</span>
-              <h3>Root canal treatment</h3>
-              <p>Treatment of the tissues and root canals inside a tooth.</p>
+              <div class="service-top">
+                <span class="service-number">03 / ENDODONTICS</span>
+                <span class="service-symbol" aria-hidden="true">⌁</span>
+              </div>
+              <h3>
+                <span class="t en" lang="en">Root canal treatment</span>
+                <span class="t hy" lang="hy">Արմատախողովակների բուժում</span>
+                <span class="t ru" lang="ru">Лечение каналов</span>
+              </h3>
+              <p>
+                <span class="t en" lang="en">
+                  Treatment of the tissues and canals inside a tooth.
+                  Ask about assessment, treatment stages, and the
+                  restoration that may be needed afterwards.
+                </span>
+                <span class="t hy" lang="hy">
+                  Ատամի ներսում գտնվող հյուսվածքների և խողովակների
+                  բուժում։ Ճշտեք հետազոտման, բուժման փուլերի և
+                  հետագա վերականգնման անհրաժեշտության մասին։
+                </span>
+                <span class="t ru" lang="ru">
+                  Лечение тканей и каналов внутри зуба. Уточните
+                  порядок обследования, этапы лечения и необходимость
+                  последующего восстановления зуба.
+                </span>
+              </p>
             </article>
 
             <article class="service-card">
-              <span class="service-number">04</span>
-              <h3>Crowns &amp; prosthetics</h3>
-              <p>Options for restoring damaged teeth or replacing missing teeth.</p>
+              <div class="service-top">
+                <span class="service-number">04 / PROSTHETICS</span>
+                <span class="service-symbol" aria-hidden="true">♜</span>
+              </div>
+              <h3>
+                <span class="t en" lang="en">Crowns &amp; prosthetics</span>
+                <span class="t hy" lang="hy">Պսակներ և պրոթեզավորում</span>
+                <span class="t ru" lang="ru">Коронки и протезирование</span>
+              </h3>
+              <p>
+                <span class="t en" lang="en">
+                  Options for restoring damaged teeth or replacing
+                  missing teeth. Discuss available materials,
+                  alternatives, and the proposed treatment sequence.
+                </span>
+                <span class="t hy" lang="hy">
+                  Վնասված կամ բացակայող ատամների վերականգնման և
+                  փոխարինման տարբերակներ։ Քննարկեք նյութերը,
+                  այլընտրանքները և բուժման հերթականությունը։
+                </span>
+                <span class="t ru" lang="ru">
+                  Варианты восстановления повреждённых и замещения
+                  отсутствующих зубов. Обсудите материалы,
+                  альтернативы и последовательность лечения.
+                </span>
+              </p>
             </article>
 
             <article class="service-card">
-              <span class="service-number">05</span>
-              <h3>Oral surgery &amp; implants</h3>
-              <p>Ask about tooth extractions and consultations for dental implants.</p>
+              <div class="service-top">
+                <span class="service-number">05 / SURGERY</span>
+                <span class="service-symbol" aria-hidden="true">⊕</span>
+              </div>
+              <h3>
+                <span class="t en" lang="en">Surgery &amp; implants</span>
+                <span class="t hy" lang="hy">Վիրաբուժություն և իմպլանտացիա</span>
+                <span class="t ru" lang="ru">Хирургия и имплантация</span>
+              </h3>
+              <p>
+                <span class="t en" lang="en">
+                  Ask about extractions and implant consultations.
+                  Suitability, investigations, recovery, and any
+                  referral requirements should be discussed individually.
+                </span>
+                <span class="t hy" lang="hy">
+                  Ճշտեք հեռացման և իմպլանտացիայի խորհրդատվության
+                  հնարավորությունը։ Ցուցումները, հետազոտությունները
+                  և վերականգնման ընթացքը քննարկվում են անհատապես։
+                </span>
+                <span class="t ru" lang="ru">
+                  Уточните возможность удаления зубов и консультации
+                  по имплантации. Показания, обследования,
+                  восстановление и направления обсуждаются индивидуально.
+                </span>
+              </p>
             </article>
 
             <article class="service-card">
-              <span class="service-number">06</span>
-              <h3>Orthodontics &amp; aesthetics</h3>
-              <p>Ask about teeth alignment and cosmetic treatment options for your smile.</p>
+              <div class="service-top">
+                <span class="service-number">06 / AESTHETICS</span>
+                <span class="service-symbol" aria-hidden="true">✦</span>
+              </div>
+              <h3>
+                <span class="t en" lang="en">Alignment &amp; aesthetics</span>
+                <span class="t hy" lang="hy">Օրթոդոնտիա և էսթետիկա</span>
+                <span class="t ru" lang="ru">Ортодонтия и эстетика</span>
+              </h3>
+              <p>
+                <span class="t en" lang="en">
+                  Explore questions about tooth alignment and the
+                  appearance of your smile. Ask which options are
+                  available and appropriate for your oral health.
+                </span>
+                <span class="t hy" lang="hy">
+                  Քննարկեք ատամների դիրքի և ժպիտի տեսքի հետ կապված
+                  հարցերը։ Ճշտեք հասանելի տարբերակներն ու դրանց
+                  համապատասխանությունը Ձեր բերանի խոռոչի վիճակին։
+                </span>
+                <span class="t ru" lang="ru">
+                  Обсудите положение зубов и внешний вид улыбки.
+                  Уточните доступные варианты и их соответствие
+                  состоянию вашей полости рта.
+                </span>
+              </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="doctors-en" class="container section">
-        <p class="eyebrow">03 / OUR DENTISTS</p>
-        <h2>Meet your dentists</h2>
+      <!-- USEFUL PATIENT INFORMATION -->
 
-        <div class="doctors-grid">
-          <article class="doctor-card">
-            <div class="doctor-photo">
-              <span class="initials" aria-hidden="true">HH</span>
-              <small>Doctor photograph to be added</small>
-            </div>
-            <h3>Hovhannes Hayrapetyan</h3>
-            <p>Graduate of Yerevan State Medical University (YSMU).</p>
-          </article>
+      <section class="section philosophy">
+        <div class="container philosophy-grid">
+          <div>
+            <span class="eyebrow">
+              <span class="t en" lang="en">A more informed visit</span>
+              <span class="t hy" lang="hy">Ավելի տեղեկացված այց</span>
+              <span class="t ru" lang="ru">Больше ясности перед приёмом</span>
+            </span>
 
-          <article class="doctor-card">
-            <div class="doctor-photo">
-              <span class="initials" aria-hidden="true">VT</span>
-              <small>Doctor photograph to be added</small>
+            <h2>
+              <span class="t en" lang="en">
+                Good questions.<br>Clearer decisions.
+              </span>
+              <span class="t hy" lang="hy">
+                Ճիշտ հարցեր։<br>Հստակ որոշումներ։
+              </span>
+              <span class="t ru" lang="ru">
+                Важные вопросы.<br>Понятные решения.
+              </span>
+            </h2>
+
+            <p>
+              <span class="t en" lang="en">
+                Your appointment is an opportunity to understand your
+                oral health and discuss the next steps.
+                These are useful questions to raise with your dentist.
+              </span>
+              <span class="t hy" lang="hy">
+                Այցը հնարավորություն է հասկանալու Ձեր բերանի խոռոչի
+                վիճակը և քննարկելու հաջորդ քայլերը։
+                Ահա հարցեր, որոնք օգտակար է տալ բժշկին։
+              </span>
+              <span class="t ru" lang="ru">
+                Приём — возможность разобраться в состоянии полости
+                рта и обсудить следующие шаги.
+                Эти вопросы полезно задать врачу.
+              </span>
+            </p>
+          </div>
+
+          <div>
+            <div class="principle">
+              <span class="principle-number">01</span>
+              <div>
+                <h3>
+                  <span class="t en" lang="en">Understand your options</span>
+                  <span class="t hy" lang="hy">Հասկացեք տարբերակները</span>
+                  <span class="t ru" lang="ru">Разберитесь в вариантах</span>
+                </h3>
+                <p>
+                  <span class="t en" lang="en">Ask what is recommended, why it is proposed, and which alternatives may be available.</span>
+                  <span class="t hy" lang="hy">Հարցրեք՝ ինչ է առաջարկվում, ինչու և ինչ այլընտրանքներ կարող են լինել։</span>
+                  <span class="t ru" lang="ru">Спросите, что рекомендуется, почему и какие существуют альтернативы.</span>
+                </p>
+              </div>
             </div>
-            <h3>Vilen Tsatryan</h3>
-            <p>Graduate of Yerevan State Medical University (YSMU).</p>
-          </article>
+
+            <div class="principle">
+              <span class="principle-number">02</span>
+              <div>
+                <h3>
+                  <span class="t en" lang="en">Discuss the practical details</span>
+                  <span class="t hy" lang="hy">Քննարկեք գործնական մանրամասները</span>
+                  <span class="t ru" lang="ru">Обсудите практические детали</span>
+                </h3>
+                <p>
+                  <span class="t en" lang="en">Clarify the estimated cost, number of visits, and what the proposed treatment includes.</span>
+                  <span class="t hy" lang="hy">Ճշտեք մոտավոր արժեքը, այցերի քանակը և առաջարկվող բուժման ծավալը։</span>
+                  <span class="t ru" lang="ru">Уточните примерную стоимость, количество визитов и состав предлагаемого лечения.</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="principle">
+              <span class="principle-number">03</span>
+              <div>
+                <h3>
+                  <span class="t en" lang="en">Know what comes afterwards</span>
+                  <span class="t hy" lang="hy">Իմացեք հետագա քայլերը</span>
+                  <span class="t ru" lang="ru">Узнайте о дальнейших шагах</span>
+                </h3>
+                <p>
+                  <span class="t en" lang="en">Ask about aftercare, follow-up appointments, and who to contact if you have questions.</span>
+                  <span class="t hy" lang="hy">Հարցրեք հետագա խնամքի, վերահսկիչ այցերի և հարցերի դեպքում կապի մասին։</span>
+                  <span class="t ru" lang="ru">Спросите об уходе после лечения, повторных визитах и контактах для вопросов.</span>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="steps-section">
+      <!-- DOCTORS -->
+
+      <section id="doctors" class="section">
         <div class="container">
-          <p class="eyebrow">YOUR NEXT STEP</p>
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">
+                <span class="t en" lang="en">The people / 03</span>
+                <span class="t hy" lang="hy">Մեր բժիշկները / 03</span>
+                <span class="t ru" lang="ru">Наши врачи / 03</span>
+              </span>
+
+              <h2>
+                <span class="t en" lang="en">Meet your dentists.</span>
+                <span class="t hy" lang="hy">Ծանոթացեք մեր բժիշկներին։</span>
+                <span class="t ru" lang="ru">Познакомьтесь с врачами.</span>
+              </h2>
+            </div>
+
+            <p>
+              <span class="t en" lang="en">
+                Hovhannes Hayrapetyan and Vilen Tsatryan.
+                Both graduates of Yerevan State Medical University.
+              </span>
+              <span class="t hy" lang="hy">
+                Հովհաննես Հայրապետյան և Վիլեն Ծատրյան։
+                Երկուսն էլ ԵՊԲՀ շրջանավարտներ են։
+              </span>
+              <span class="t ru" lang="ru">
+                Ованнес Айрапетян и Вилен Цатрян —
+                выпускники Ереванского государственного
+                медицинского университета.
+              </span>
+            </p>
+          </div>
+
+          <!--
+            These photographs are illustrative placeholders.
+            Replace them with approved photographs of the actual doctors.
+          -->
+
+          <div class="doctor-grid">
+            <article class="doctor-card">
+              <div class="doctor-photo">
+                <img
+                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+                  alt="Illustrative medical professional; not Hovhannes Hayrapetyan"
+                  loading="lazy"
+                  width="1000"
+                  height="1200">
+
+                <div class="photo-disclaimer">
+                  <span class="t en" lang="en">ILLUSTRATIVE PHOTO · NOT THE NAMED DOCTOR</span>
+                  <span class="t hy" lang="hy">ՊԱՏԿԵՐԱԶԱՐԴՈՂ ԼՈՒՍԱՆԿԱՐ · ՆՇՎԱԾ ԲԺԻՇԿԸ ՉԷ</span>
+                  <span class="t ru" lang="ru">ИЛЛЮСТРАТИВНОЕ ФОТО · НЕ УКАЗАННЫЙ ВРАЧ</span>
+                </div>
+              </div>
+
+              <div class="doctor-info">
+                <div>
+                  <h3>
+                    <span class="t en" lang="en">Hovhannes Hayrapetyan</span>
+                    <span class="t hy" lang="hy">Հովհաննես Հայրապետյան</span>
+                    <span class="t ru" lang="ru">Ованнес Айрапетян</span>
+                  </h3>
+                  <p>
+                    <span class="t en" lang="en">Yerevan State Medical University graduate.</span>
+                    <span class="t hy" lang="hy">Երևանի պետական բժշկական համալսարանի շրջանավարտ։</span>
+                    <span class="t ru" lang="ru">Выпускник Ереванского государственного медицинского университета.</span>
+                  </p>
+                </div>
+                <a class="doctor-arrow"
+                   href="https://wa.me/37499292929"
+                   aria-label="Contact the clinic">↗</a>
+              </div>
+            </article>
+
+            <article class="doctor-card">
+              <div class="doctor-photo">
+                <img
+                  src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+                  alt="Illustrative medical professional; not Vilen Tsatryan"
+                  loading="lazy"
+                  width="1000"
+                  height="1200">
+
+                <div class="photo-disclaimer">
+                  <span class="t en" lang="en">ILLUSTRATIVE PHOTO · NOT THE NAMED DOCTOR</span>
+                  <span class="t hy" lang="hy">ՊԱՏԿԵՐԱԶԱՐԴՈՂ ԼՈՒՍԱՆԿԱՐ · ՆՇՎԱԾ ԲԺԻՇԿԸ ՉԷ</span>
+                  <span class="t ru" lang="ru">ИЛЛЮСТРАТИВНОЕ ФОТО · НЕ УКАЗАННЫЙ ВРАЧ</span>
+                </div>
+              </div>
+
+              <div class="doctor-info">
+                <div>
+                  <h3>
+                    <span class="t en" lang="en">Vilen Tsatryan</span>
+                    <span class="t hy" lang="hy">Վիլեն Ծատրյան</span>
+                    <span class="t ru" lang="ru">Вилен Цатрян</span>
+                  </h3>
+                  <p>
+                    <span class="t en" lang="en">Yerevan State Medical University graduate.</span>
+                    <span class="t hy" lang="hy">Երևանի պետական բժշկական համալսարանի շրջանավարտ։</span>
+                    <span class="t ru" lang="ru">Выпускник Ереванского государственного медицинского университета.</span>
+                  </p>
+                </div>
+                <a class="doctor-arrow"
+                   href="https://wa.me/37499292929"
+                   aria-label="Contact the clinic">↗</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- VISIT PROCESS -->
+
+      <section id="visit" class="section journey">
+        <div class="container">
+          <div class="center-heading">
+            <span class="eyebrow">
+              <span class="t en" lang="en">Your visit / 04</span>
+              <span class="t hy" lang="hy">Ձեր այցը / 04</span>
+              <span class="t ru" lang="ru">Ваш визит / 04</span>
+            </span>
+
+            <h2>
+              <span class="t en" lang="en">Your next step, made clearer.</span>
+              <span class="t hy" lang="hy">Ձեր հաջորդ քայլը՝ ավելի հստակ։</span>
+              <span class="t ru" lang="ru">Ваш следующий шаг — понятнее.</span>
+            </h2>
+          </div>
+
           <ol class="steps">
-            <li><span>01</span> Get in touch</li>
-            <li><span>02</span> Discuss your visit</li>
-            <li><span>03</span> Confirm your appointment</li>
+            <li>
+              <span class="step-number">01</span>
+              <h3>
+                <span class="t en" lang="en">Contact the clinic</span>
+                <span class="t hy" lang="hy">Կապվեք կլինիկայի հետ</span>
+                <span class="t ru" lang="ru">Свяжитесь с клиникой</span>
+              </h3>
+              <p>
+                <span class="t en" lang="en">Call or send a WhatsApp message with your appointment request.</span>
+                <span class="t hy" lang="hy">Զանգահարեք կամ WhatsApp-ով ուղարկեք այցի Ձեր հարցումը։</span>
+                <span class="t ru" lang="ru">Позвоните или отправьте запрос на запись в WhatsApp.</span>
+              </p>
+            </li>
+
+            <li>
+              <span class="step-number">02</span>
+              <h3>
+                <span class="t en" lang="en">Confirm the details</span>
+                <span class="t hy" lang="hy">Հաստատեք մանրամասները</span>
+                <span class="t ru" lang="ru">Подтвердите детали</span>
+              </h3>
+              <p>
+                <span class="t en" lang="en">Agree on a time and confirm the exact address before travelling.</span>
+                <span class="t hy" lang="hy">Համաձայնեցրեք ժամը և այցից առաջ ճշտեք ճշգրիտ հասցեն։</span>
+                <span class="t ru" lang="ru">Согласуйте время и уточните точный адрес перед поездкой.</span>
+              </p>
+            </li>
+
+            <li>
+              <span class="step-number">03</span>
+              <h3>
+                <span class="t en" lang="en">Prepare your questions</span>
+                <span class="t hy" lang="hy">Պատրաստեք Ձեր հարցերը</span>
+                <span class="t ru" lang="ru">Подготовьте вопросы</span>
+              </h3>
+              <p>
+                <span class="t en" lang="en">Bring relevant dental records and a list of medicines you take.</span>
+                <span class="t hy" lang="hy">Բերեք առկա ստոմատոլոգիական փաստաթղթերը և ընդունվող դեղերի ցանկը։</span>
+                <span class="t ru" lang="ru">Возьмите стоматологические документы и список принимаемых лекарств.</span>
+              </p>
+            </li>
+
+            <li>
+              <span class="step-number">04</span>
+              <h3>
+                <span class="t en" lang="en">Discuss the next steps</span>
+                <span class="t hy" lang="hy">Քննարկեք հաջորդ քայլերը</span>
+                <span class="t ru" lang="ru">Обсудите дальнейшие шаги</span>
+              </h3>
+              <p>
+                <span class="t en" lang="en">Ask about the proposed treatment, alternatives, fees, and follow-up.</span>
+                <span class="t hy" lang="hy">Հարցրեք բուժման, այլընտրանքների, արժեքի և վերահսկիչ այցերի մասին։</span>
+                <span class="t ru" lang="ru">Уточните лечение, альтернативы, стоимость и повторные визиты.</span>
+              </p>
+            </li>
           </ol>
         </div>
       </section>
 
-      <section class="container section faq-grid">
-        <div>
-          <p class="eyebrow">FREQUENTLY ASKED QUESTIONS</p>
-          <h2>Before your visit</h2>
-        </div>
+      <!-- FAQ -->
 
-        <div>
-          <details>
-            <summary>How do I book an appointment?</summary>
-            <p>
-              Call +374 99 29 29 29 or message us on WhatsApp.
-              Your appointment is confirmed when the clinic replies.
-            </p>
-          </details>
+      <section class="section">
+        <div class="container faq-grid">
+          <div>
+            <span class="eyebrow">
+              <span class="t en" lang="en">Before you arrive</span>
+              <span class="t hy" lang="hy">Այցից առաջ</span>
+              <span class="t ru" lang="ru">Перед приёмом</span>
+            </span>
 
-          <details>
-            <summary>How much does treatment cost?</summary>
-            <p>
-              Contact the clinic for pricing. Your treatment plan
-              and final fee should be agreed after an assessment.
-            </p>
-          </details>
+            <h2>
+              <span class="t en" lang="en">A few things<br>you may be wondering.</span>
+              <span class="t hy" lang="hy">Հարցեր, որոնք կարող են Ձեզ հետաքրքրել։</span>
+              <span class="t ru" lang="ru">Ответы на ваши вопросы.</span>
+            </h2>
 
-          <details>
-            <summary>Where is the clinic?</summary>
-            <p>
-              Kapan, Syunik, Armenia. The exact street address will
-              be added. Please call for directions before visiting.
-            </p>
-          </details>
+            <a class="text-link" href="https://wa.me/37499292929">
+              <span class="t en" lang="en">Ask us on WhatsApp</span>
+              <span class="t hy" lang="hy">Գրել WhatsApp-ով</span>
+              <span class="t ru" lang="ru">Написать в WhatsApp</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
 
-          <details>
-            <summary>What should I bring to my first visit?</summary>
-            <p>
-              Bring any existing dental records and a list of medicines
-              you take. Ask the clinic beforehand if anything else is needed.
-            </p>
-          </details>
+          <div>
+            <details>
+              <summary>
+                <span class="t en" lang="en">How do I book an appointment?</span>
+                <span class="t hy" lang="hy">Ինչպե՞ս գրանցվել այցի։</span>
+                <span class="t ru" lang="ru">Как записаться на приём?</span>
+              </summary>
+              <p>
+                <span class="t en" lang="en">Call +374 99 29 29 29 or use WhatsApp. Your appointment is confirmed when the clinic replies with an agreed time.</span>
+                <span class="t hy" lang="hy">Զանգահարեք +374 99 29 29 29 կամ գրեք WhatsApp-ով։ Այցը հաստատվում է կլինիկայի պատասխանով և համաձայնեցված ժամով։</span>
+                <span class="t ru" lang="ru">Позвоните по номеру +374 99 29 29 29 или напишите в WhatsApp. Запись подтверждается ответом клиники с согласованным временем.</span>
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                <span class="t en" lang="en">Where is 29 Dent located?</span>
+                <span class="t hy" lang="hy">Որտե՞ղ է գտնվում 29 Dent-ը։</span>
+                <span class="t ru" lang="ru">Где находится 29 Dent?</span>
+              </summary>
+              <p>
+                <span class="t en" lang="en">Kapan, Syunik, Armenia. The exact street address is still to be added to this website. Please call for directions before your visit.</span>
+                <span class="t hy" lang="hy">Հայաստան, Սյունիք, Կապան։ Փողոցի ճշգրիտ հասցեն դեռ պետք է ավելացվի կայքում։ Այցից առաջ ճանապարհը ճշտեք զանգով։</span>
+                <span class="t ru" lang="ru">Армения, Сюник, Капан. Точный адрес ещё будет добавлен на сайт. Перед визитом позвоните, чтобы уточнить дорогу.</span>
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                <span class="t en" lang="en">Where can I find treatment prices?</span>
+                <span class="t hy" lang="hy">Ինչպե՞ս ճշտել բուժման գները։</span>
+                <span class="t ru" lang="ru">Где узнать стоимость лечения?</span>
+              </summary>
+              <p>
+                <span class="t en" lang="en">Ask the clinic directly. Confirm what is included in the proposed treatment and agree on the fee after an assessment.</span>
+                <span class="t hy" lang="hy">Դիմեք կլինիկային։ Ճշտեք առաջարկվող բուժման ծավալը և զննումից հետո համաձայնեցրեք արժեքը։</span>
+                <span class="t ru" lang="ru">Обратитесь в клинику. Уточните состав предлагаемого лечения и согласуйте стоимость после осмотра.</span>
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                <span class="t en" lang="en">Are all listed treatments available?</span>
+                <span class="t hy" lang="hy">Բոլոր նշված ծառայությունները հասանելի՞ են։</span>
+                <span class="t ru" lang="ru">Все перечисленные услуги доступны?</span>
+              </summary>
+              <p>
+                <span class="t en" lang="en">The service list is awaiting clinic confirmation. Contact 29 Dent to confirm availability and whether a particular treatment is appropriate for you.</span>
+                <span class="t hy" lang="hy">Ծառայությունների ցանկը դեռ ենթակա է հաստատման։ Կապվեք 29 Dent-ի հետ՝ առկայությունն ու Ձեր դեպքում բուժման նպատակահարմարությունը ճշտելու համար։</span>
+                <span class="t ru" lang="ru">Список услуг ещё ожидает подтверждения. Свяжитесь с 29 Dent, чтобы уточнить наличие и возможность конкретного лечения в вашем случае.</span>
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                <span class="t en" lang="en">What are your opening hours?</span>
+                <span class="t hy" lang="hy">Որո՞նք են աշխատաժամերը։</span>
+                <span class="t ru" lang="ru">Каковы часы работы?</span>
+              </summary>
+              <p>
+                <span class="t en" lang="en">Monday to Saturday, 10:00–19:00. Contact the clinic to confirm appointment availability and any holiday changes.</span>
+                <span class="t hy" lang="hy">Երկուշաբթիից շաբաթ՝ 10:00–19:00։ Ազատ ժամերն ու տոնական օրերի փոփոխությունները ճշտեք կլինիկայից։</span>
+                <span class="t ru" lang="ru">С понедельника по субботу, 10:00–19:00. Свободное время и изменения в праздничные дни уточняйте в клинике.</span>
+              </p>
+            </details>
+          </div>
         </div>
       </section>
 
-      <section id="contact-en" class="contact section">
+      <!-- CONTACT -->
+
+      <section id="contact" class="section contact">
         <div class="container contact-grid">
           <div>
-            <p class="eyebrow">04 / CONTACT</p>
-            <h2>Let’s plan your visit.</h2>
+            <span class="eyebrow">
+              <span class="t en" lang="en">We look forward to hearing from you</span>
+              <span class="t hy" lang="hy">Սպասում ենք Ձեր կապին</span>
+              <span class="t ru" lang="ru">Будем рады вашему обращению</span>
+            </span>
 
-            <a class="contact-phone" href="tel:+37499292929">
+            <h2>
+              <span class="t en" lang="en">Your next chapter<br>starts with a hello.</span>
+              <span class="t hy" lang="hy">Ամեն ինչ սկսվում է առաջին կապից։</span>
+              <span class="t ru" lang="ru">Начните<br>с простого «здравствуйте».</span>
+            </h2>
+
+            <p class="contact-intro">
+              <span class="t en" lang="en">Contact 29 Dent to ask a question, confirm a service, or arrange your next appointment in Kapan.</span>
+              <span class="t hy" lang="hy">Կապվեք 29 Dent-ի հետ՝ հարց տալու, ծառայությունը ճշտելու կամ Կապանում Ձեր հաջորդ այցը կազմակերպելու համար։</span>
+              <span class="t ru" lang="ru">Свяжитесь с 29 Dent, чтобы задать вопрос, уточнить услугу или записаться на приём в Капане.</span>
+            </p>
+
+            <a class="phone-large" href="tel:+37499292929">
               +374 99 29 29 29
             </a>
 
             <div class="actions">
-              <a class="button button-light" href="https://wa.me/37499292929">
-                WhatsApp ↗
+              <a class="button" href="https://wa.me/37499292929">
+                WhatsApp <span aria-hidden="true">↗</span>
               </a>
-              <a class="email" href="mailto:29dent@gmail.com">
-                29dent@gmail.com
+              <a class="button button-outline" href="mailto:29dent@gmail.com">
+                <span class="t en" lang="en">Email us</span>
+                <span class="t hy" lang="hy">Էլեկտրոնային նամակ</span>
+                <span class="t ru" lang="ru">Написать на почту</span>
               </a>
             </div>
           </div>
 
-          <div class="contact-details">
-            <h3>Kapan, Syunik, Armenia</h3>
-            <p>
-              Exact street address to be added.
-              Please call for directions.
-            </p>
-            <p>
-              Monday–Saturday<br>
-              10:00–19:00
-            </p>
+          <div class="contact-panel">
+            <div class="contact-row">
+              <small>
+                <span class="t en" lang="en">Location</span>
+                <span class="t hy" lang="hy">Հասցե</span>
+                <span class="t ru" lang="ru">Адрес</span>
+              </small>
+              <p>
+                <span class="t en" lang="en">Kapan, Syunik, Armenia</span>
+                <span class="t hy" lang="hy">Հայաստան, Սյունիք, Կապան</span>
+                <span class="t ru" lang="ru">Армения, Сюник, Капан</span>
+              </p>
+              <p class="small-note">
+                <span class="t en" lang="en">Street address to be added. Please call for directions.</span>
+                <span class="t hy" lang="hy">Փողոցի հասցեն կավելացվի։ Ճանապարհը ճշտեք զանգով։</span>
+                <span class="t ru" lang="ru">Точный адрес будет добавлен. Уточните дорогу по телефону.</span>
+              </p>
 
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Kapan%2C%20Armenia">
-              View Kapan on Google Maps ↗
-            </a>
-            <p class="map-note">
-              The map shows Kapan, not a verified clinic location.
-            </p>
+              <a class="map-link"
+                 href="https://www.google.com/maps/search/?api=1&amp;query=Kapan%2C%20Armenia">
+                <span class="t en" lang="en">View Kapan on Google Maps</span>
+                <span class="t hy" lang="hy">Կապանը Google Maps-ում</span>
+                <span class="t ru" lang="ru">Капан на Google Maps</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <p class="small-note">
+                <span class="t en" lang="en">City map only; not a verified clinic pin.</span>
+                <span class="t hy" lang="hy">Քաղաքի քարտեզն է, ոչ թե կլինիկայի հաստատված տեղը։</span>
+                <span class="t ru" lang="ru">Карта города, а не подтверждённая точка клиники.</span>
+              </p>
+            </div>
+
+            <div class="contact-row">
+              <small>
+                <span class="t en" lang="en">Opening hours</span>
+                <span class="t hy" lang="hy">Աշխատաժամեր</span>
+                <span class="t ru" lang="ru">Часы работы</span>
+              </small>
+              <p>
+                <span class="t en" lang="en">Monday–Saturday · 10:00–19:00</span>
+                <span class="t hy" lang="hy">Երկուշաբթի–շաբաթ · 10:00–19:00</span>
+                <span class="t ru" lang="ru">Понедельник–суббота · 10:00–19:00</span>
+              </p>
+            </div>
+
+            <div class="contact-row">
+              <small>Email</small>
+              <p>
+                <a href="mailto:29dent@gmail.com">29dent@gmail.com</a>
+              </p>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="container footer-inner">
-        <a class="logo" href="#main-en">29<span>Dent</span></a>
-        <p>© 2026 29 Dent · Dental clinic · Kapan, Armenia</p>
-        <a class="back-top" href="#main-en" aria-label="Back to top">↑</a>
+      <div class="container">
+        <div class="footer-top">
+          <a class="logo" href="#main" aria-label="29 Dent home">
+            <span class="logo-mark">29</span>
+            <span>
+              <span class="logo-name">29 DENT</span>
+              <span class="logo-sub">Dental Clinic · Kapan</span>
+            </span>
+          </a>
+
+          <div class="footer-links">
+            <a href="tel:+37499292929">+374 99 29 29 29</a>
+            <a href="mailto:29dent@gmail.com">29dent@gmail.com</a>
+            <a href="https://wa.me/37499292929">WhatsApp ↗</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 29 Dent. Kapan, Armenia.</p>
+          <a href="#main">
+            <span class="t en" lang="en">Back to top ↑</span>
+            <span class="t hy" lang="hy">Վերադառնալ վերև ↑</span>
+            <span class="t ru" lang="ru">Наверх ↑</span>
+          </a>
+        </div>
       </div>
     </footer>
   </div>
-
-  <!-- ==================== RUSSIAN ==================== -->
-
-  <div class="page page-ru" lang="ru">
-    <a class="skip-link" href="#main-ru">К содержанию</a>
-
-    <header class="header">
-      <div class="container header-inner">
-        <a class="logo" href="#main-ru" aria-label="29 Dent">
-          29<span>Dent</span><b aria-hidden="true">✦</b>
-        </a>
-
-        <nav class="nav" aria-label="Основная навигация">
-          <a href="#about-ru">О клинике</a>
-          <a href="#services-ru">Услуги</a>
-          <a href="#doctors-ru">Врачи</a>
-          <a href="#contact-ru">Контакты</a>
-        </nav>
-
-        <a class="header-call" href="tel:+37499292929">Позвонить ↗</a>
-      </div>
-    </header>
-
-    <main id="main-ru">
-      <section class="container hero">
-        <div>
-          <p class="eyebrow">КАПАН · АРМЕНИЯ</p>
-          <h1>Ваша улыбка — в центре внимания.</h1>
-          <p class="lead">
-            Добро пожаловать в 29 Dent. Свяжитесь с нами, чтобы
-            обсудить уход за зубами и записаться на приём в Капане.
-          </p>
-
-          <div class="actions">
-            <a class="button" href="https://wa.me/37499292929">
-              Записаться на приём <span aria-hidden="true">↗</span>
-            </a>
-            <a class="text-link" href="tel:+37499292929">Позвонить</a>
-          </div>
-
-          <p class="hours-small">
-            Понедельник–суббота · 10:00–19:00
-          </p>
-        </div>
-
-        <div class="hero-art" role="img"
-             aria-label="Монограмма 29 Dent. Фото клиники будет добавлено.">
-          <span class="sparkle" aria-hidden="true">✦</span>
-          <div class="monogram">29</div>
-          <div class="monogram-word">DENT</div>
-          <span class="photo-note">Фото клиники будет добавлено</span>
-        </div>
-      </section>
-
-      <div class="ribbon">
-        <div class="container ribbon-inner">
-          <span class="ribbon-brand">29 DENT</span>
-          <span>Армения, Сюник, Капан</span>
-          <a href="tel:+37499292929">+374 99 29 29 29 ↗</a>
-        </div>
-      </div>
-
-      <section id="about-ru" class="container section about-grid">
-        <p class="eyebrow">01 / О КЛИНИКЕ</p>
-        <div>
-          <h2>Начните с заботы о своей улыбке.</h2>
-          <p class="body-copy">
-            29 Dent — стоматологическая клиника в Капане,
-            Сюникская область, Армения. Свяжитесь с нашей командой,
-            чтобы обсудить ваши вопросы, возможные варианты лечения
-            и предстоящий визит. Записаться можно по телефону или через WhatsApp.
-          </p>
-        </div>
-      </section>
-
-      <section id="services-ru" class="services section">
-        <div class="container">
-          <p class="eyebrow">02 / УСЛУГИ</p>
-          <h2>Направления стоматологии</h2>
-
-          <p class="notice">
-            Наличие перечисленных услуг в 29 Dent необходимо
-            подтвердить в клинике перед записью на конкретное лечение.
-          </p>
-
-          <div class="service-grid">
-            <article class="service-card">
-              <span class="service-number">01</span>
-              <h3>Профилактический уход</h3>
-              <p>Осмотры, профессиональная чистка зубов и обсуждение домашней гигиены.</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">02</span>
-              <h3>Восстановление зубов</h3>
-              <p>Варианты лечения кариеса, пломбирования и восстановления повреждённых зубов.</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">03</span>
-              <h3>Лечение корневых каналов</h3>
-              <p>Лечение тканей и корневых каналов внутри зуба.</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">04</span>
-              <h3>Коронки и протезирование</h3>
-              <p>Варианты восстановления повреждённых и замещения отсутствующих зубов.</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">05</span>
-              <h3>Хирургия и имплантация</h3>
-              <p>Уточните возможность удаления зубов и консультации по имплантации.</p>
-            </article>
-
-            <article class="service-card">
-              <span class="service-number">06</span>
-              <h3>Ортодонтия и эстетика</h3>
-              <p>Уточните варианты исправления положения зубов и эстетического лечения.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="doctors-ru" class="container section">
-        <p class="eyebrow">03 / ВРАЧИ</p>
-        <h2>Познакомьтесь с нашими врачами</h2>
-
-        <div class="doctors-grid">
-          <article class="doctor-card">
-            <div class="doctor-photo">
-              <span class="initials" aria-hidden="true">ОА</span>
-              <small>Фото врача будет добавлено</small>
-            </div>
-            <h3>Ованнес Айрапетян</h3>
-            <p>Выпускник Ереванского государственного медицинского университета — ЕГМУ.</p>
-          </article>
-
-          <article class="doctor-card">
-            <div class="doctor-photo">
-              <span class="initials" aria-hidden="true">ВЦ</span>
-              <small>Фото врача будет добавлено</small>
-            </div>
-            <h3>Вилен Цатрян</h3>
-            <p>Выпускник Ереванского государственного медицинского университета — ЕГМУ.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="steps-section">
-        <div class="container">
-          <p class="eyebrow">СЛЕДУЮЩИЙ ШАГ</p>
-          <ol class="steps">
-            <li><span>01</span> Свяжитесь с нами</li>
-            <li><span>02</span> Обсудите визит</li>
-            <li><span>03</span> Подтвердите запись</li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="container section faq-grid">
-        <div>
-          <p class="eyebrow">ЧАСТЫЕ ВОПРОСЫ</p>
-          <h2>Перед приёмом</h2>
-        </div>
-
-        <div>
-          <details>
-            <summary>Как записаться на приём?</summary>
-            <p>
-              Позвоните по номеру +374 99 29 29 29 или напишите
-              в WhatsApp. Запись подтверждается ответом клиники.
-            </p>
-          </details>
-
-          <details>
-            <summary>Сколько стоит лечение?</summary>
-            <p>
-              Уточните цены в клинике. План лечения и окончательную
-              стоимость следует согласовать после осмотра.
-            </p>
-          </details>
-
-          <details>
-            <summary>Где находится клиника?</summary>
-            <p>
-              Армения, Сюникская область, Капан.
-              Точный адрес будет добавлен. Перед визитом позвоните,
-              чтобы уточнить дорогу.
-            </p>
-          </details>
-
-          <details>
-            <summary>Что взять на первый приём?</summary>
-            <p>
-              Возьмите имеющиеся стоматологические документы
-              и список принимаемых лекарств. Заранее уточните
-              в клинике, нужно ли что-то ещё.
-            </p>
-          </details>
-        </div>
-      </section>
-
-      <section id="contact-ru" class="contact section">
-        <div class="container contact-grid">
-          <div>
-            <p class="eyebrow">04 / КОНТАКТЫ</p>
-            <h2>Запланируем ваш визит.</h2>
-
-            <a class="contact-phone" href="tel:+37499292929">
-              +374 99 29 29 29
-            </a>
-
-            <div class="actions">
-              <a class="button button-light" href="https://wa.me/37499292929">
-                WhatsApp ↗
-              </a>
-              <a class="email" href="mailto:29dent@gmail.com">
-                29dent@gmail.com
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-details">
-            <h3>Армения, Сюник, Капан</h3>
-            <p>
-              Точный адрес будет добавлен.
-              Пожалуйста, позвоните, чтобы уточнить дорогу.
-            </p>
-            <p>
-              Понедельник–суббота<br>
-              10:00–19:00
-            </p>
-
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Kapan%2C%20Armenia">
-              Капан на Google Maps ↗
-            </a>
-            <p class="map-note">
-              На карте показан Капан, а не подтверждённое местоположение клиники.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container footer-inner">
-        <a class="logo" href="#main-ru">29<span>Dent</span></a>
-        <p>© 2026 29 Dent · Стоматологическая клиника · Капан</p>
-        <a class="back-top" href="#main-ru" aria-label="Наверх">↑</a>
-      </div>
-    </footer>
-  </div>
-
 </body>
 </html>
